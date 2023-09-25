@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/test1', function () {
     return view('test1');
 });
+
+Route::get('/', [PostsController::class,'index']);
+
+
