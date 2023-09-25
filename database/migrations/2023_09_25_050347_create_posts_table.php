@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->bigintunsigned('id');
-            $table->bigintunsigned('user_id');
-            $table->varchar(255)('name');
-            $table->text('');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('name', 255);
+            $table->text('content');
         });
     }
 
