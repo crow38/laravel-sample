@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\PostsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,10 @@ Route::get('/test1', function () {
     return view('test1');
 });
 
-Route::get('/posts', [PostsController::class,'index']);
+#Post一覧を表示
+Route::get('/posts', [PostsController::class,'index']); 
+
+
+
 
 

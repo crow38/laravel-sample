@@ -1,15 +1,24 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    @foreach($values as $value)
+        <div class="text-3xl">
+            {{ $value->name}}<br>
+            {{ $value->id }} <br>
+            {{ $value->contents }} <br>
+        </div>
 
-@section('content')
-    <div class="container">
-        <h1>投稿一覧</h1>
+        <h2>Comments</h2>
         <ul>
-            @foreach ($posts as $post)
-                <h4>id:{{ $post->id }}</h4>
-                <h5>user_id:{{ $post->user_id }}</h5>
-                <li>name:{{ $post->name }}</li>
-                <p>本文......   {{$post->content}}
+            @foreach($value->comments as $comment)
+                <li>{{ $comment->name}}:{{ $comment->body }}</li>
             @endforeach
         </ul>
-    </div>
-@endsection
+    @endforeach
+</body>
+</html>
